@@ -1,0 +1,101 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>租售管理</h2>
+    </div>
+
+    <div class="cf">
+        <a class="btn" href="{:U('add')}">新 增</a>
+        <button class="btn ajax-post confirm" url="{:U('changeStatus?method=deleteHouse')}" target-form="ids">删 除</button>
+        <button class="btn list_sort" url="{:U('sort',array('cate_id'=>$cate_id,'pid'=>I('pid',0)),'')}">排序</button>
+    </div>
+
+    <div class="data-table table-striped">
+        <table>
+            <thead>
+            <tr>
+                <th class="row-selected">
+                    <input class="checkbox check-all" type="checkbox">
+                </th>
+                <th>ID</th>
+                <th>标题</th>
+                <th>电话</th>
+                <th>价格</th>
+                <th>地址</th>
+                <th>面积</th>
+                <th>类型</th>
+                <th>发布时间</th>
+                <th>截止时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="list">
+                <volist name="list" id="house">
+                    <tr>
+                        <td><input class="ids" type="checkbox" name="id[]" value="{$house.id}" /></td>
+                        <td>{$house.id}</td>
+                        <td><a href="{:U('index?pid='.$house['id'])}">{$house.title}</a></td>
+                        <td>{$house.tel}</td>
+                        <td>{$house.price} {$house['company']==0?'元':'万元'}</td>
+                        <td>{$house.address}</td>
+                        <td>{$house.size}</td>
+                        <td>{$house['type']==1?'出售':'出租'}</td>
+                        <td>{:date('Y-m-d',$house['create_time'])}</td>
+                        <td>{$house.over_time}</td>
+                        <td>{$house.status}</td>
+                        <td>
+                            <a title="编辑" href="{:U('edit?id='.$house['id'])}">编辑</a>
+                            <a class="confirm ajax-get" title="删除" href="{:U('del?id='.$house['id'])}">删除</a>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$page}
+    </div>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            //点击排序
+            $('.list_sort').click(function(){
+                var url = $(this).attr('url');
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }
+
+                if(url != undefined && url != ''){
+                    window.location.href = url + '/ids/' + param;
+                }
+            });
+
+            //批量删除
+//            $('#del').click(function(){
+//                //找到所有选中的数据
+//                $('tr').each(function(){
+//
+//
+//                });
+//
+//            });
+        });
+    </script>
+</block>
+
+
+
