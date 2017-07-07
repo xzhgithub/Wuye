@@ -31,10 +31,10 @@
             <label class="item-label">房屋图片<span class="check-tips"></span></label>
             <div class="controls">
                 <input type="file" id="upload_picture_{$field.name}">
-                <input type="hidden" name="img" id="cover_id_{$field.name}" value="{$data[$field['name']]}"/>
-                <div class="upload-img-box">
-                    <notempty name="data[$field['name']]">
-                        <div class="upload-pre-item"><img src="{$data[$field['name']]|get_cover='path'}"/></div>
+                <input type="hidden" name="img" id="cover_id_{$field.name}" value="{$info.img|default=''}"/>
+                    <div class="upload-img-box">
+                    <notempty name="info.img">
+                        <div class="upload-pre-item"><img src="{$info.img|get_cover='path'}"/></div>
                     </notempty>
                 </div>
             </div>

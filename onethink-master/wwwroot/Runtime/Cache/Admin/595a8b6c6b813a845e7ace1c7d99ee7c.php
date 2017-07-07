@@ -115,9 +115,9 @@
             <label class="item-label">房屋图片<span class="check-tips"></span></label>
             <div class="controls">
                 <input type="file" id="upload_picture_<?php echo ($field["name"]); ?>">
-                <input type="hidden" name="img" id="cover_id_<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>"/>
-                <div class="upload-img-box">
-                    <?php if(!empty($data[$field['name']])): ?><div class="upload-pre-item"><img src="<?php echo (get_cover($data[$field['name']],'path')); ?>"/></div><?php endif; ?>
+                <input type="hidden" name="img" id="cover_id_<?php echo ($field["name"]); ?>" value="<?php echo ((isset($info["img"]) && ($info["img"] !== ""))?($info["img"]):''); ?>"/>
+                    <div class="upload-img-box">
+                    <?php if(!empty($info["img"])): ?><div class="upload-pre-item"><img src="<?php echo (get_cover($info["img"],'path')); ?>"/></div><?php endif; ?>
                 </div>
             </div>
         </div>

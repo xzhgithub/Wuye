@@ -86,7 +86,7 @@
 
             
 	<div class="main-title">
-		<h2>租售管理</h2>
+		<h2>导航管理</h2>
 	</div>
 
 	<div class="cf">
@@ -103,8 +103,8 @@
 						<input class="checkbox check-all" type="checkbox">
 					</th>
 					<th>ID</th>
-					<th>名称</th>
-					<th>地址</th>
+					<th>导航名称</th>
+					<th>导航地址</th>
                     <th>排序</th>
 					<th>操作</th>
 				</tr>
