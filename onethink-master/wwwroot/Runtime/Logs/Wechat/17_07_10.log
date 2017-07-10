@@ -1,0 +1,140 @@
+[ 2017-07-10T09:00:52+08:00 ] 127.0.0.1 /wechat.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002758s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046726s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000844s ]
+
+[ 2017-07-10T09:00:55+08:00 ] 127.0.0.1 /wechat.php?s=/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.032295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.032372s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `onethink_channel` [ RunTime:0.0777s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`sort`,`create_time`,`update_time`,`status`,`target` FROM `onethink_channel` WHERE ( status=1 ) ORDER BY `sort`  [ RunTime:0.0189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.348199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.348261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002685s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002770s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001229s ]
+
+[ 2017-07-10T09:00:57+08:00 ] 127.0.0.1 /wechat.php?s=/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003752s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004587s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001370s ]
+
+[ 2017-07-10T09:01:12+08:00 ] 127.0.0.1 /wechat.php?s=/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002538s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0519s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`='1499648472',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0670s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0365s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1499648472','admin在2017-07-10 09:01登录了后台') [ RunTime:0.0573s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 1 E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Application\Common\Common\function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Application\Common\Common\function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1499562072 LIMIT 1   [ RunTime:0.1031s ]
+
+[ 2017-07-10T09:01:13+08:00 ] 127.0.0.1 /wechat.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002479s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0459s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0011s ]
+
+[ 2017-07-10T09:01:13+08:00 ] 127.0.0.1 /wechat.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003154s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0043s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0419s ]
+SQL: SELECT `id`,`name`,`title`,`pid`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`model`,`model_sub`,`type`,`link_id`,`allow_publish`,`display`,`reply`,`check`,`reply_model`,`extend`,`create_time`,`update_time`,`status`,`icon`,`groups` FROM `onethink_category` WHERE `status` = 1 ORDER BY `sort`  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0543s ]
+SQL: SELECT `id`,`uid`,`name`,`title`,`category_id`,`group_id`,`description`,`root`,`pid`,`model_id`,`type`,`position`,`link_id`,`cover_id`,`display`,`deadline`,`attach`,`view`,`comment`,`extend`,`level`,`create_time`,`update_time`,`status` FROM `onethink_document` WHERE `status` = 1 AND `pid` = 0 AND `create_time` < 1499648473 AND ( deadline = 0 OR deadline > 1499648473 ) ORDER BY `id` DESC  [ RunTime:0.0315s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022740s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022830s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001426s ]
+
+[ 2017-07-10T09:01:18+08:00 ] 127.0.0.1 /wechat.php?s=/Xiaoqu/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002815s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+NOTIC: [2048] Declaration of Wechat\Controller\XiaoquController::get() should be compatible with Think\Controller::get($name = '') E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Application\Wechat\Controller\XiaoquController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.0046s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `onethink_document` WHERE `status` = 1 AND `category_id` = 42 AND `deadline` > 1499648478 LIMIT 2   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0476s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001728s ]
+

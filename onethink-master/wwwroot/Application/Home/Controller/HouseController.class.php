@@ -16,6 +16,7 @@ class HouseController extends Controller
 
     //小区租售
     public function index(){
+
         //获取小区租售信息
 
         $map1  = array('status' => array('gt', -1), 'type'=>0);

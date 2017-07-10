@@ -1,0 +1,50 @@
+[ 2017-07-07T20:28:58+08:00 ] 127.0.0.1 /index.php?s=/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002228s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+ERR: 无法加载控制器:Login
+
+[ 2017-07-07T20:40:14+08:00 ] 127.0.0.1 /index.php?s=/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003136s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+ERR: 无法加载控制器:Login
+
+[ 2017-07-07T21:24:36+08:00 ] 127.0.0.1 /index.php?s=/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002774s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+ERR: 无法加载控制器:Login
+
+[ 2017-07-07T21:47:17+08:00 ] 127.0.0.1 /index.php?s=/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+ERR: 无法加载控制器:Login
+
+[ 2017-07-07T21:47:29+08:00 ] 127.0.0.1 /index.php?s=/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002283s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+ERR: 无法加载控制器:Login
+

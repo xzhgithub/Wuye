@@ -7945,3 +7945,890 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001215s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001390s ]
 
+[ 2017-07-07T20:28:36+08:00 ] 127.0.0.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002721s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+
+[ 2017-07-07T20:28:36+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001548s ]
+
+[ 2017-07-07T20:28:36+08:00 ] 127.0.0.1 /admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004265s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001740s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2017-07-07T20:29:40+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001892s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0421s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0159s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1499430579','admin在2017-07-07 20:29登录了后台') [ RunTime:0.0366s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 1 E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Application\Common\Common\function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Application\Common\Common\function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1499344179 LIMIT 1   [ RunTime:0.0716s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`='1499430579',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0005s ]
+
+[ 2017-07-07T20:29:40+08:00 ] 127.0.0.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004147s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001210s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0382s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY `sort` asc  [ RunTime:0.0069s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0286s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0530s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_member` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_document` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_document` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_category` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_category` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_model` [ RunTime:0.0255s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_model` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.176211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004609s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000904s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.175970s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.330604s ]
+SQL: select version() as v; [ RunTime:0.0340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039623s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.149668s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.188449s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.188478s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.397344s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004268s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.216793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.220223s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.031751s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.396294s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004495s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.216793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.220423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001428s ]
+
+[ 2017-07-07T20:29:44+08:00 ] 127.0.0.1 /admin.php?s=/House/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002209s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002759s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0052s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY `sort` asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%House/index%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `onethink_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `onethink_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.1288s ]
+SQL: SELECT `id`,`url` FROM `onethink_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `onethink_menu` WHERE `group` = '管理中心' AND `pid` = 124 AND `hide` = 0 ORDER BY `sort` asc  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0069s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048290s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001169s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001236s ]
+
+[ 2017-07-07T20:32:30+08:00 ] 127.0.0.1 /admin.php?s=/House/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0511s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.165384s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000985s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.166783s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.166818s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008168s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001290s ]
+
+[ 2017-07-07T20:33:50+08:00 ] 127.0.0.1 /admin.php?s=/File/uploadPicture/session_id/0eng2fqn40728qia9cqrmiq6o6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004497s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+SQL: SHOW COLUMNS FROM `onethink_menu` [ RunTime:0.0062s ]
+SQL: SELECT `id`,`title`,`url` FROM `onethink_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY `sort` asc  [ RunTime:0.0006s ]
+SQL: SELECT `pid` FROM `onethink_menu` WHERE ( pid !=0 AND url like '%File/uploadPicture%' ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0062s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `onethink_picture` WHERE `md5` = 'f52bb1bd4d36b33e6332cf1cca803565' AND `sha1` = '86be7ababa50cc899f8a2a56d7eb4d94813ef9c6' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-07-07T20:35:21+08:00 ] 127.0.0.1 /admin.php?s=/House/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003756s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0049s ]
+SQL: INSERT INTO `onethink_house` (`title`,`detail`,`img`,`address`,`size`,`price`,`company`,`tel`,`type`,`over_time`,`id`,`create_time`,`update_time`,`status`) VALUES ('套三出租','好房急租，速度！速度！速度！','5','北京东城中心街88号','88','8800','0','18868866688','0','2017-07-31','0','1499430921','1499430921','1') [ RunTime:0.2350s ]
+
+[ 2017-07-07T20:35:23+08:00 ] 127.0.0.1 /admin.php?s=/House/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003510s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 0,5   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012151s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001065s ]
+
+[ 2017-07-07T20:35:27+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003753s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 10,5   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2017-07-07T20:35:31+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004244s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0052s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.013160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.012524s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.012545s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001198s ]
+
+[ 2017-07-07T20:35:42+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003611s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0056s ]
+SQL: UPDATE `onethink_house` SET `title`='zzz',`detail`='zzz',`img`='5',`address`='zzz',`size`='23',`price`='234',`company`='0',`tel`='15634546541',`type`='0',`over_time`='2017-07-31',`update_time`='1499430942' WHERE `id` = 10 [ RunTime:0.1072s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_house' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-07-07T20:35:44+08:00 ] 127.0.0.1 /admin.php?s=/House/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005545s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012188s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000827s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001215s ]
+
+[ 2017-07-07T20:35:46+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 5,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+
+[ 2017-07-07T20:35:48+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002924s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 10,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001059s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001009s ]
+
+[ 2017-07-07T20:35:56+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002868s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0049s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011892s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003572s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000607s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.011340s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.011362s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006954s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000766s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+
+[ 2017-07-07T20:36:02+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002585s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001162s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0043s ]
+
+[ 2017-07-07T20:36:16+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013451s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013504s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2017-07-07T20:36:20+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002538s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 10,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011359s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2017-07-07T20:36:24+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002589s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0046s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000592s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.010600s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.010628s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005366s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000875s ]
+
+[ 2017-07-07T20:36:32+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002644s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0049s ]
+
+[ 2017-07-07T20:36:37+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002606s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0045s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.010937s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003279s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000842s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.010754s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.010780s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010918s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003313s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2017-07-07T20:36:45+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003357s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003984s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0644s ]
+
+[ 2017-07-07T20:36:53+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002531s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0046s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003123s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.010754s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.010773s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003150s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2017-07-07T20:37:03+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003271s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0055s ]
+SQL: UPDATE `onethink_house` SET `title`='zzz',`detail`='zzz',`img`='5',`address`='zzz',`size`='232',`price`='23422',`company`='0',`tel`='15634546541',`type`='0',`over_time`='2017-07-31',`update_time`='1499431023' WHERE `id` = 10 [ RunTime:0.1477s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `onethink_action` WHERE `name` = 'update_house' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-07-07T20:37:05+08:00 ] 127.0.0.1 /admin.php?s=/House/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003312s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2017-07-07T20:37:17+08:00 ] 127.0.0.1 /admin.php?s=/House/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002945s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_house` WHERE `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `onethink_house` WHERE `status` = 1 ORDER BY `level` DESC,`id` DESC LIMIT 10,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Undefined variable: cate_id E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\592338015e58c355f5612c932c3fb3aa.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011555s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000974s ]
+
+[ 2017-07-07T20:37:18+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002541s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0110s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.019039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.017929s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.017948s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2017-07-07T20:37:27+08:00 ] 127.0.0.1 /admin.php?s=/House/edit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003251s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0947s ]
+
+[ 2017-07-07T20:37:47+08:00 ] 127.0.0.1 /admin.php?s=/House/edit/id/10.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002489s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `onethink_house` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `onethink_house` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined variable: pid E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 98 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+NOTIC: [8] Undefined variable: data E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 109 行.
+INFO: [ adminArticleEdit ] --START--
+SQL: SHOW COLUMNS FROM `onethink_addons` [ RunTime:0.0049s ]
+SQL: SELECT `config` FROM `onethink_addons` WHERE `name` = 'EditorForAdmin' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011576s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003858s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003889s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: Run Addons\EditorForAdmin\EditorForAdminAddon [ RunTime:0.011582s ]
+INFO: [ adminArticleEdit ] --END-- [ RunTime:0.011600s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 117 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 118 行.
+SQL: SHOW COLUMNS FROM `onethink_picture` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `onethink_picture` WHERE `status` = 1 AND `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 128 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 137 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 142 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 146 行.
+NOTIC: [8] Undefined variable: field E:\20170217php\php\2017-07-06-onethink\OneThink\onethink-master\wwwroot\Runtime\Cache\Admin\595a8b6c6b813a845e7ace1c7d99ee7c.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003889s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000006s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.005285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
