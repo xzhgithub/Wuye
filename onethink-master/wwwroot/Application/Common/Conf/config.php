@@ -40,7 +40,7 @@ return array(
 
     /* 数据库配置 */
     'DB_TYPE'   => 'mysql', // 数据库类型
-    'DB_HOST'   => '127.0.0.1', // 服务器地址
+    'DB_HOST'   => '47.93.223.127', // 服务器地址
     'DB_NAME'   => 'weixin', // 数据库名
     'DB_USER'   => 'weixin', // 用户名
     'DB_PWD'    => 'weixin',  // 密码
