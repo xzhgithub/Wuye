@@ -86,77 +86,54 @@
 
             
     <div class="main-title">
-        <h2><?php if(isset($data)): ?>[ <?php echo ($data["title"]); ?> ] 子<?php endif; ?>菜单管理 </h2>
+        <h2>租售管理</h2>
     </div>
 
     <div class="cf">
-        <a class="btn" href="<?php echo U('add',array('pid'=>I('get.pid',0)));?>">新 增</a>
-        <button class="btn ajax-post confirm" url="<?php echo U('del');?>" target-form="ids">删 除</button>
-        <a class="btn" href="<?php echo U('import',array('pid'=>I('get.pid',0)));?>">导 入</a>
-        <button class="btn list_sort" url="<?php echo U('sort',array('pid'=>I('get.pid',0)),'');?>">排序</button>
-        <!-- 高级搜索 -->
-        <div class="search-form fr cf">
-            <div class="sleft">
-                <input type="text" name="title" class="search-input" value="<?php echo I('title');?>" placeholder="请输入菜单名称">
-                <a class="sch-btn" href="javascript:;" id="search" url="/admin.php?s=/Menu/index/pid/131.html"><i class="btn-search"></i></a>
-            </div>
-        </div>
+        <a class="btn" href="<?php echo U('add');?>">新 增</a>
+        <button class="btn ajax-post confirm" url="<?php echo U('changeStatus?method=deleteHouse');?>" target-form="ids">删 除</button>
+        <button class="btn list_sort" url="<?php echo U('sort',array('cate_id'=>$cate_id,'pid'=>I('pid',0)),'');?>">排序</button>
     </div>
 
     <div class="data-table table-striped">
-        <form class="ids">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="row-selected">
-                            <input class="checkbox check-all" type="checkbox">
-                        </th>
-                        <th>ID</th>
-                        <th>名称</th>
-                        <th>上级菜单</th>
-                        <th>分组</th>
-                        <th>URL</th>
-                        <th>排序</th>
-                        <th>仅开发者模式显示</th>
-                        <th>隐藏</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody>
-				<?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><tr>
-                        <td><input class="ids row-selected" type="checkbox" name="id[]" value="<?php echo ($menu["id"]); ?>"></td>
-                        <td><?php echo ($menu["id"]); ?></td>
+        <table>
+            <thead>
+            <tr>
+                <th class="row-selected">
+                    <input class="checkbox check-all" type="checkbox">
+                </th>
+                <th>ID</th>
+                <th>保修人</th>
+                <th>电话</th>
+                <th>地址</th>
+                <th>问题</th>
+                <th>报修时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($onlines)): if(is_array($onlines)): $i = 0; $__LIST__ = $onlines;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$online): $mod = ($i % 2 );++$i;?><tr>
+                        <td><input class="ids" type="checkbox" name="id[]" value="<?php echo ($online["id"]); ?>" /></td>
+                        <td><?php echo ($online["id"]); ?></td>
+                        <td><?php echo ($online["username"]); ?></td>
+                        <td><?php echo ($online["tel"]); ?></td>
+                        <td><?php echo ($online["address"]); ?></td>
+                        <td><?php echo ($online["title"]); ?></td>
+                        <td><?php echo date('Y-m-d',$online['create_time']);?></td>
+                        <td><?php echo ($status[$online['status']]); ?></td>
                         <td>
-                            <a href="<?php echo U('index?pid='.$menu['id']);?>"><?php echo ($menu["title"]); ?></a>
-                        </td>
-                        <td><?php echo ((isset($menu["up_title"]) && ($menu["up_title"] !== ""))?($menu["up_title"]):'无'); ?></td>
-                        <td><?php echo ($menu["group"]); ?></td>
-                        <td><?php echo ($menu["url"]); ?></td>
-                        <td><?php echo ($menu["sort"]); ?></td>
-                        <td>
-                            <a href="<?php echo U('toogleDev',array('id'=>$menu['id'],'value'=>abs($menu['is_dev']-1)));?>" class="ajax-get">
-                            <?php echo ($menu["is_dev_text"]); ?>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<?php echo U('toogleHide',array('id'=>$menu['id'],'value'=>abs($menu['hide']-1)));?>" class="ajax-get">
-                            <?php echo ($menu["hide_text"]); ?>
-                            </a>
-                        </td>
-                        <td>
-                            <a title="编辑" href="<?php echo U('edit?id='.$menu['id']);?>">编辑</a>
-                            <a class="confirm ajax-get" title="删除" href="<?php echo U('del?id='.$menu['id']);?>">删除</a>
+                            <a title="编辑" href="<?php echo U('edit?id='.$house['id']);?>">编辑</a>
+                            <a class="confirm ajax-get" title="删除" href="<?php echo U('del?id='.$house['id']);?>">删除</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				<?php else: ?>
-				<td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-                </tbody>
-            </table>
-        </form>
-        <!-- 分页 -->
-        <div class="page">
-
-        </div>
+                <?php else: ?>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        <?php echo ($page); ?>
     </div>
 
         </div>
@@ -254,45 +231,33 @@
     
     <script type="text/javascript">
         $(function() {
-            //搜索功能
-            $("#search").click(function() {
-                var url = $(this).attr('url');
-                var query = $('.search-form').find('input').serialize();
-                query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g, '');
-                query = query.replace(/^&/g, '');
-                if (url.indexOf('?') > 0) {
-                    url += '&' + query;
-                } else {
-                    url += '?' + query;
-                }
-                window.location.href = url;
-            });
-            //回车搜索
-            $(".search-input").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    $("#search").click();
-                    return false;
-                }
-            });
-            //导航高亮
-            highlight_subnav('<?php echo U('index');?>');
             //点击排序
-        	$('.list_sort').click(function(){
-        		var url = $(this).attr('url');
-        		var ids = $('.ids:checked');
-        		var param = '';
-        		if(ids.length > 0){
-        			var str = new Array();
-        			ids.each(function(){
-        				str.push($(this).val());
-        			});
-        			param = str.join(',');
-        		}
+            $('.list_sort').click(function(){
+                var url = $(this).attr('url');
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }
 
-        		if(url != undefined && url != ''){
-        			window.location.href = url + '/ids/' + param;
-        		}
-        	});
+                if(url != undefined && url != ''){
+                    window.location.href = url + '/ids/' + param;
+                }
+            });
+
+            //批量删除
+//            $('#del').click(function(){
+//                //找到所有选中的数据
+//                $('tr').each(function(){
+//
+//
+//                });
+//
+//            });
         });
     </script>
 

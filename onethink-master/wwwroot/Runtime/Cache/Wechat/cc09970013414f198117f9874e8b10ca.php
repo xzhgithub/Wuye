@@ -80,7 +80,6 @@
             num=num+1;
 
             $.post('wechat.php?s=/Notice/get',{'num':num},function(data){
-                console.log(data.notices);
                 if(data.notices!=''){
                     $(data.notices).each(function(i,v){
                         var img=data.imgs[v.cover_id];

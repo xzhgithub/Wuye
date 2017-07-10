@@ -37,7 +37,7 @@
             <p class="navbar-text"><a href="faxian.html" class="navbar-link">发现</a></p>
         </div>
         <div class="col-xs-3">
-            <p class="navbar-text"><a href="my.html" class="navbar-link">我的</a></p>
+            <p class="navbar-text"><a href="<?php echo U('My/index');?>" class="navbar-link">我的</a></p>
         </div>
     </div>
 </nav>
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="col-xs-4">
-                    <a href="online.html">
+                    <a href="<?php echo U('Online/index');?>">
                     <div class="indexLabel label-info">
                     <span class="glyphicon glyphicon-heart-empty"></span><br/>
                     在线报修
