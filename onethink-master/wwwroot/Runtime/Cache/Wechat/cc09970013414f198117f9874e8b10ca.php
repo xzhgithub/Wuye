@@ -62,7 +62,7 @@
 
     </div>
     <div class="text-center">
-        <button type="button" class="btn btn-info ajax-page">获取跟多~~~</button>
+        <button type="button" class="btn btn-info ajax-page">获取更多~~~</button>
     </div>
 
 </div>
@@ -79,7 +79,7 @@
         $('.ajax-page').click(function(){
             num=num+1;
 
-            $.post('wechat.php?s=/Notice/get',{'num':num},function(data){
+            $.getJSON('wechat.php?s=/Notice/get',{'num':num},function(data){
                 if(data.notices!=''){
                     $(data.notices).each(function(i,v){
                         var img=data.imgs[v.cover_id];
@@ -101,7 +101,7 @@
                     })
                 }else{
 
-                        $('.ajax-page').html("没有跟多数据了！！").removeClass('ajax-page')
+                        $('.ajax-page').html("没有更多数据了！！").removeClass('ajax-page')
                 }
 
 

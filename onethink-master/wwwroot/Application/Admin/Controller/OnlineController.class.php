@@ -27,20 +27,20 @@ class OnlineController extends AdminController
     public function add(){
         if(IS_POST){
 //            var_dump(11);exit;
-            $House = D('House');
-            $data = $House->create();
+            $Online = M('Online');
+            $data = $Online->create();
 //            var_dump($data);exit;
             if($data){
-                $id = $House->add();
+                $id = $Online->add();
                 if($id){
                     $this->success('新增成功', U('index'));
                     //记录行为
-                    action_log('update_house', 'house', $id, UID);
+                    action_log('update_online', 'online', $id, UID);
                 } else {
                     $this->error('新增失败');
                 }
             } else {
-                $this->error($House->getError());
+                $this->error($Online->getError());
             }
         } else {
 

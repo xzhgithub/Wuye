@@ -118,11 +118,11 @@
         <div class="form-item">
             <label class="item-label">标题<span class="check-tips"></span>(简述报修问题)</label>
             <div class="controls">
-                <input type="text" class="text input-large" name="size" value="<?php echo ((isset($info["size"]) && ($info["size"] !== ""))?($info["size"]):''); ?>">
+                <input type="text" class="text input-large" name="title" value="<?php echo ((isset($info["title"]) && ($info["title"] !== ""))?($info["title"]):''); ?>">
             </div>
         </div>
         <div class="form-item">
-            <label class="item-label">内容<span class="check-tips"></span></label>
+            <label class="item-label">内容<span class="check-tips"></span>(详细叙述保修内容)</label>
 
             <div class="textarea">
                 <textarea name="detail"><?php echo ((isset($info["detail"]) && ($info["detail"] !== ""))?($info["detail"]):''); ?></textarea>
