@@ -8,8 +8,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="/Public/Home/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/Public/Home/css/style.css" rel="stylesheet">
+    <link href="Public/Home/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Public/Home/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid text-center">
             <div class="col-xs-3">
-                <p class="navbar-text"><a href="{:U('Wechat/index')}" class="navbar-link">首页</a></p>
+                <p class="navbar-text"><a href="{:U('Index/index')}" class="navbar-link">首页</a></p>
             </div>
             <div class="col-xs-3">
                 <p class="navbar-text"><a href="#" class="navbar-link">服务</a></p>
@@ -57,9 +57,9 @@
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/Public/Home/jquery-1.11.2.min.js"></script>
+<script src="Public/Home/jquery-1.11.2.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/Public/Home/bootstrap/js/bootstrap.min.js"></script>
+<script src="Public/Home/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
 
@@ -70,12 +70,16 @@
             var id=$(this).closest('.container-fluid').find('input').val();
 
             $.get('Wechat.php?s=/Huodong/canjia',{'id':id},function(data){
+
                 if(data.status==1){
                     alert('参加成功！！！')
                 }else if(data.status==0){
                     alert('参加失败！！！')
                 }else if(data.status==-1){
                     alert('您已经参加过该活动！！！')
+                }else if(data.status==2){
+                    alert('您还未登陆,请先登陆！');
+                    self.location='wechat.php?s=/User/login';
                 }
             });
         }

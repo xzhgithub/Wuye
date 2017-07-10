@@ -9,7 +9,9 @@
 namespace Wechat\Controller;
 
 
-class HuodongController extends HomeController
+use Think\Controller;
+
+class HuodongController extends Controller
 {
 
     //参加活动
@@ -18,7 +20,8 @@ class HuodongController extends HomeController
         //获取用户id
         $member_id=session ( 'user_auth' )['uid'];
         if(!$member_id){
-            $this->error('您还没有登录，请先登录！',U('User/login'));
+            $this->ajaxReturn(['status'=>2]);
+//            $this->error('您还没有登录，请先登录！',U('User/login'));
         }else{
             //将参加活动信息保存
             //获取该活动信息
@@ -27,7 +30,7 @@ class HuodongController extends HomeController
             //判断是否已参加过
             $map['title']=$huodong['title'];
             $map['member_id']=$member_id;
-            $action=M('huodong')->where($map)->find();
+            $action=M('Huodong')->where($map)->find();
             if($action){//已参加过该活动
                 $result=['status'=>-1];
             }else{
@@ -39,7 +42,7 @@ class HuodongController extends HomeController
                 $data['member_id']=$member_id;
                 $data['status']=0;
                 $data['check']=0;
-                $re=M('huodong')->add($data);
+                $re=M('Huodong')->add($data);
                 if($re){
                     $result=['status'=>1];
 

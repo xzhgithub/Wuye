@@ -28,7 +28,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid text-center">
             <div class="col-xs-3">
-                <p class="navbar-text"><a href="<?php echo U('Wechat/index');?>" class="navbar-link">首页</a></p>
+                <p class="navbar-text"><a href="<?php echo U('Index/index');?>" class="navbar-link">首页</a></p>
             </div>
             <div class="col-xs-3">
                 <p class="navbar-text"><a href="#" class="navbar-link">服务</a></p>

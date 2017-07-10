@@ -11,7 +11,7 @@ namespace Wechat\Controller;
 
 use Think\Controller;
 
-class HouseController extends HomeController
+class HouseController extends Controller
 {
 
     //Ð¡Çø×âÊÛ

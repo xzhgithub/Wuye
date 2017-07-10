@@ -28,7 +28,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid text-center">
             <div class="col-xs-3">
-                <p class="navbar-text"><a href="<?php echo U('Wechat/index');?>" class="navbar-link">首页</a></p>
+                <p class="navbar-text"><a href="<?php echo U('Index/index');?>" class="navbar-link">首页</a></p>
             </div>
             <div class="col-xs-3">
                 <p class="navbar-text"><a href="#" class="navbar-link">服务</a></p>
@@ -70,12 +70,16 @@
             var id=$(this).closest('.container-fluid').find('input').val();
 
             $.get('Wechat.php?s=/Huodong/canjia',{'id':id},function(data){
+
                 if(data.status==1){
                     alert('参加成功！！！')
                 }else if(data.status==0){
                     alert('参加失败！！！')
                 }else if(data.status==-1){
                     alert('您已经参加过该活动！！！')
+                }else if(data.status==2){
+                    alert('您还未登陆,请先登陆！');
+                    self.location='wechat.php?s=/User/login';
                 }
             });
         }

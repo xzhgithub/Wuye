@@ -9,7 +9,9 @@
 namespace Wechat\Controller;
 
 
-class XiaoquController extends HomeController
+use Think\Controller;
+
+class XiaoquController extends Controller
 {
     //小区活动
     public function index(){
@@ -43,8 +45,8 @@ class XiaoquController extends HomeController
     }
 
     //ajax请求获取更多数据
-    public function get(){
-        $num=I('num');
+    public function get($num){
+//        $num=I('num');
         $map  = array('status' => 1, 'category_id'=>42,'deadline'=>array('gt',time()));
         $notices=M('document')->where($map)->limit(2*($num-1),2)->select();
         //获取图片

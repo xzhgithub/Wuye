@@ -11,7 +11,7 @@ namespace Wechat\Controller;
 
 use Think\Controller;
 
-class NoticeController extends HomeController
+class NoticeController extends Controller
 {
     //小区通知首页
     public function index(){
